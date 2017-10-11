@@ -18,4 +18,9 @@ describe('Band', function() {
   it('Starts bands with two chord points', function() {
     expect(band.addPoints(band.points)).toEqual(3)
   });
+
+  it('Adds a Chord to a band', function() {
+    band.addChord(2)
+    expect(band.chords).toEqual(['C', 'G', 'A'])
+  });
 });
