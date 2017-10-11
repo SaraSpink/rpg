@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src ="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src ="build/js/app.js"></script>    <title>Bandattle</title>
+  </head>
+  <body>
+    <div id = "welcome">
+      <form id="bandNameInput">
+        <h3>You started a band!</h3>
+        <p>Armed with your trusty ukelele and the knowledge of both "C" and "G" chords, you are ready to start training for the Battle of the Bands!</p>
+        <label for="name">choose an EPIC name for your band:</label>
+        <input type="text" id="name">
+        <button type="submit">Let's rock!</button>
+      </form>
+    </div>
+
+    <div id="beginning" class="hide-at-start">
+      <p>Congratulations <span id="bandName"></span>, you are ready to begin!</p>
+      <p>Looks like you need more intruments. Would you like to go to Archibald's Music Shoppe or Pete's Pawn Palace?</p>
+      <form id="getInstrumentsForm">
+        <input type="radio" name="musicstore" value="store"> Music Store<br>
+        <input type="radio" name="musicstore" value="pawn"> Pawn Shop<br>
+        <button type="submit">Party on!</button>
+      </form>
+    </div>
+
+    <div id="pete" class="hide-at-start">
+      <p>UGLY AS FUUUUUUUU*K</p>
+    </div>
+
+    <div id="archibald" class="hide-at-start">
+      <p>Bourgois dream house!!! Clarinet sale today only!</p>
+    </div>
+
+  </body>
+</html>
