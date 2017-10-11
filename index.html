@@ -21,18 +21,72 @@
       <p>Congratulations <span id="bandName"></span>, you are ready to begin!</p>
       <p>Looks like you need more intruments. Would you like to go to Archibald's Music Shoppe or Pete's Pawn Palace?</p>
       <form id="getInstrumentsForm">
-        <input type="radio" name="musicstore" value="store"> Music Store<br>
-        <input type="radio" name="musicstore" value="pawn"> Pawn Shop<br>
+        <label>
+          <input type="radio" name="musicstore" value="store">
+          Archibald's Music Shoppe
+        </label>
+        <label>
+        <input type="radio" name="musicstore" value="pawn">
+          Pete's Dirty-ass Pawn Emporium
+        </label>
         <button type="submit">Party on!</button>
       </form>
     </div>
 
     <div id="pete" class="hide-at-start">
-      <p>UGLY AS FUUUUUUUU*K</p>
+      <h3>Welcome to Pete's, whaddya want?</h3>
+      <form id="getInstrumentsForm">
+        <label>
+          <input type="radio" name="instrument" value="guitar">
+          Guitar J20
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="sweetGuitar">
+          Badass Gibson Les Paul Silver Top J40
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="flute">
+          A flute J100
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="gamelan">
+          Ancient gamelan. what are the odds???? J10
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="ukelele">
+          I'm happy with my Ukelele J0
+        </label>
+
+        <button type="submit">Let's get playin, man or woman!</button>
+      </form>
     </div>
 
-    <div id="archibald" class="hide-at-start">
-      <p>Bourgois dream house!!! Clarinet sale today only!</p>
+    <div id ="archibald" class="hide-at-start">
+      <h3>Welcome to Arcibald's, we have clarinets and class!</h3>
+      <form id="getInstrumentsForm">
+        <label>
+          <input type="radio" name="instrument" value="clarinet">
+          Brand new clarinet! wow! J200
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="violin">
+          Stratavarius Violin J500
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="flute">
+          A flute J100
+        </label>
+        <label>
+        <input type="radio" name="instrument" value="ukelele">
+          I'm happy with my Ukelele J0
+        </label>
+        <button type="submit">Let's get playin, man or woman!</button>
+      </form>
+    </div>
+
+    <div id = "loser" class="hide-at-start">
+      <h1>YOU LOST</h1>
+      <p id = "reason">
     </div>
 
   </body>
