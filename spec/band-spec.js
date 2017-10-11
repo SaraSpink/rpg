@@ -32,4 +32,10 @@ describe('Band', function() {
     expect(band.addPoints(band.points)).toEqual(501)
     expect(band.instruments).toEqual(['Ukelele', 'Sax', 'Kazoo'])
   });
+
+  it("Calculates points based on a band's extras inventory", function() {
+    band.addExtras(4)
+    expect(band.addPoints(band.points)).toEqual(10003)
+    expect(band.extras).toEqual(['demo tape'])
+  });
 });

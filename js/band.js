@@ -26,4 +26,10 @@ export class Band {
     this.instruments.push(availableItems.instrumentInventory[index]);
     this.points.push(availableItems.instrumentPoints[index]);
   }
+
+  addExtras(index){
+    const availableItems = new Inventory()
+    this.extras.push(availableItems.extrasInventory[index]);
+    this.points.push(availableItems.extrasPoints[index]);
+  }
 }
