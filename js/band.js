@@ -1,12 +1,11 @@
+import { Inventory } from './../js/inventory.js';
 export class Band {
   constructor(name) {
     this.name = name;
     this.chords = ['C', 'G']
-    this.inventory = ['Ukelele']
+    this.instruments = ['Ukelele']
+    this.extras = []
     this.points = [3]
-    this.chordInventory = ['C', 'G', 'A', 'Zminor']
-    this.chordPoints = [1, 1, 2, 1000]
-
   }
 
   addPoints(array) {
@@ -17,22 +16,14 @@ export class Band {
   }
 
   addChord(index){
-    this.chords.push(this.chordInventory[index]);
-    this.points.push(this.chordPoints[index]);
+    const availableItems = new Inventory()
+    this.chords.push(availableItems.chordInventory[index]);
+    this.points.push(availableItems.chordPoints[index]);
   }
 
-}
-
-export class Inventory {
-  constructor() {
-    this.items
-    this.itemPoints
-  }
-
-  items() {
-    let total = array.reduce(function(accumulator, currentValue) {
-      return (accumulator + currentValue);
-    });
-    return total;
+  addInstrument(index){
+    const availableItems = new Inventory()
+    this.instruments.push(availableItems.instrumentInventory[index]);
+    this.points.push(availableItems.instrumentPoints[index]);
   }
 }

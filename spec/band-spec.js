@@ -1,4 +1,5 @@
-import { Band, Inventory } from './../js/band.js';
+import { Band } from './../js/band.js';
+import { Inventory } from './../js/inventory.js';
 
 describe('Band', function() {
   let band;
@@ -19,8 +20,16 @@ describe('Band', function() {
     expect(band.addPoints(band.points)).toEqual(3)
   });
 
-  it('Adds a Chord to a band', function() {
+  it('Adds a Chord to a band and calculates points based on band chord inventory', function() {
     band.addChord(2)
     expect(band.chords).toEqual(['C', 'G', 'A'])
+    expect(band.addPoints(band.points)).toEqual(5)
+  });
+
+  it("Calculates points based on a band's instrument inventory", function() {
+    band.addInstrument(3)
+    band.addInstrument(4)
+    expect(band.addPoints(band.points)).toEqual(501)
+    expect(band.instruments).toEqual(['Ukelele', 'Sax', 'Kazoo'])
   });
 });
