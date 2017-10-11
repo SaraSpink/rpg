@@ -5,7 +5,7 @@ export class Band {
     this.chords = ['C', 'G']
     this.instruments = ['Ukelele']
     this.extras = []
-    this.points = [3]
+    this.points = [50]
   }
 
   addPoints(array) {
