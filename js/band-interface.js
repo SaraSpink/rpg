@@ -56,7 +56,7 @@ $(document).ready(function() {
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
-      $('#practiceBar').show();
+
     }
 
     if (band.addPoints(band.points) < 1){
@@ -134,8 +134,10 @@ $(document).ready(function() {
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
+      $('#rentForm').hide()
       $('#gig').show()
     } else {
+      $('#rentForm').hide()
       $('#job').show()
     }
   })

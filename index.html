@@ -3,19 +3,24 @@
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
+
     <script type="text/javascript" src ="build/js/vendor.min.js"></script>
     <script type="text/javascript" src ="build/js/app.js"></script>    <title>Bandattle</title>
   </head>
   <body>
-    <div id = "status" class = "hide-at-start">
-      <p>You have <span id = "balance"></span>Javis to spend. Don't run out!</p>
-      <p>Your instruments: <span id = "instruments"></span></p>
-      <p>Your Chords: <span id = "chords"></span></p>
+    <div class ="container">
+      <div id = "status" class = "hide-at-start">
+        <p>You have <span id = "balance"></span>Javis to spend. Don't run out!</p>
+        <p>Your instruments: <span id = "instruments"></span></p>
+        <p>Your Chords: <span id = "chords"></span></p>
+      </div>
     </div>
-    <div id = "welcome">
-      <form id="bandNameInput">
+    <div class ="container">
+    <div id = "welcome" >
+
         <h3>You started a band!</h3>
         <p>Armed with your trusty ukelele and the knowledge of both "C" and "G" chords, you are ready to start training for the Battle of the Bands!</p>
+        <form id="bandNameInput">
         <label for="name">choose an EPIC name for your band:</label>
         <input type="text" id="name">
         <button type="submit">Let's rock!</button>
@@ -25,7 +30,7 @@
     <div id="beginning" class="hide-at-start">
       <p>Congratulations <span id="bandName"></span>, you are ready to begin!</p>
       <p>Looks like you need more intruments. Would you like to go to Archibald's Music Shoppe or Pete's Pawn Palace?</p>
-      <form id="getInstrumentsForm">
+      <form id="getInstrumentsForm" class ="form-control">
         <label>
           <input type="radio" name="musicstore" value="store">
           Archibald's Music Shoppe
@@ -40,7 +45,7 @@
 
     <div id="pete" class="hide-at-start">
       <h3>Welcome to Pete's, whaddya want?</h3>
-      <form id="peteInstruments">
+      <form id="peteInstruments" class ="form-control">
         <label>
           <input type="radio" name="instrument" value="0">
           Guitar J20
@@ -68,7 +73,7 @@
 
     <div id ="archibald" class="hide-at-start">
       <h3>Welcome to Arcibald's, we have clarinets and class!</h3>
-      <form id="archibaldInstruments">
+      <form id="archibaldInstruments" class ="form-control">
         <label>
           <input type="radio" name="instrument" value="3">
           Brand new clarinet! wow! J200
@@ -92,7 +97,7 @@
     <div id = "practiceBar" class = "hide-at-start">
       <h3>Congratulations on your purchase!</h3>
       <h3>It's been a long day. What's next?</h3>
-      <form id = "practiceOrBar">
+      <form id = "practiceOrBar" class ="form-control">
         <label>
           <input type="radio" name="practiceChoice" value="practice">
           Practice until your eyes bleed
@@ -108,7 +113,7 @@
     <div id = "practice" class = "hide-at-start">
       <h1>Time to earn some chords, brah! </h1>
       <h3>What do you want to practice?</h3>
-      <form id = "practiceForm">
+      <form id = "practiceForm" class ="form-control">
         <label>
           <input type="radio" name="practiceTime" value="stairway">
           Stairway to Heaven
@@ -128,7 +133,7 @@
     <div id = "bar" class = "hide-at-start">
       <h1>Unwind and get krunk! </h1>
       <h3>What are you drinking?</h3>
-      <form id = "barForm">
+      <form id = "barForm" class ="form-control">
         <label>
           <input type="radio" name="drink" value="whiteRussian">
           White Russian J5
@@ -148,7 +153,7 @@
     <div id = "home" class = "hide-at-start">
       <h1>BATTLE! </h1>
       <h3>Your landlord is waiting in your darkened apartment! (is that even legal?!) Rent is due! What do you do?</h3>
-      <form id = "rentForm">
+      <form id = "rentForm" class ="form-control">
         <label>
           <input type="radio" name="rent" value="pay">
           Give him everything in your wallet, and promise to pay up later.
@@ -168,16 +173,17 @@
     <div id = "job" class = "hide-at-start">
       <h1> You are gonna cook some mad asparagus! And sling some 'tails!</h1>
     </div>
-
+  </div>
 <!-- LOST GAME DIV: -->
+  <div class="flavorsOfFailure">
     <div id = "noStairway" class="hide-at-start">
-      <h1>NO STAIRWAY!!!!!!!!</h1>
+      <img src="img/nostairway.gif">
     </div>
 
     <div id = "loser" class="hide-at-start">
-      <h1>YOU LOST</h1>
+      <h1>You owe Javis all over town. YOU LOST</h1>
     </div>
-
+  </div>
 
   </body>
 </html>

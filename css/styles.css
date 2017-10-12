@@ -1,3 +1,8 @@
 .hide-at-start {
   display:none;
 }
+
+.flavorsOfFailure {
+  align-items: center;
+  background-color: #bf433f;
+}
