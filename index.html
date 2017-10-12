@@ -193,31 +193,48 @@
     </div>
 
     <div id = "job" class = "hide-at-start">
-      <h1> You are gonna cook some mad asparagus! And sling some 'tails!</h1>
-    </div>
-  </div>
-
-
-  <!-- dialogue image div -->
-
-  <div id="dialog" title="Basic dialog" class = 'hide-at-start'>
-  <p>Image:</p>
-  <img src="img/javi.jpg" />
-
-</div>
-<!-- LOST GAME DIV: -->
-  <div class="flavorsOfFailure">
-    <div id = "noStairway" class="hide-at-start">
-      <img src="img/nostairway.gif">
-    </div>
-
-    <div id = "loser" class="hide-at-start">
-      <div class ="javi">
-      <h1>You owe Javis all over town. YOU LOST</h1>
-      <div class ="javi">
-      <img src="img/javi.jpg"><img src="img/javi.jpg"><img src="img/javi.jpg">
+      <div id = "keepTrying">
+        <h1> You are gonna cook some mad asparagus! And sling some 'tails!</h1>
+        <h3>This lady gave you that look you hate. She's one of those old rich shits that refuses to make eye contact with servers.</h3>
+        <form id = "jobForm" class ="form-group">
+          <label>
+            <input type="radio" name="job" value="throwDrink">
+            Throw her drink at her face-hole
+          </label><br>
+          <label>
+            <input type="radio" name="job" value="smilePolitely">
+            Fake it and make her happy
+          </label><br>
+          <label>
+            <input type="radio" name="job" value="stabHer">
+            Kill her, and see what happens!
+          </label><br>
+          <button class = "btn btn-success" type = 'submit'>Give it to her</button>
+        </form>
       </div>
-  </div>
+    </div>
+
+
+<!-- LOST GAME DIV: -->
+      <div class="flavorsOfFailure">
+        <div id = "noStairway" class="hide-at-start">
+          <img src="img/nostairway.gif">
+        </div>
+
+        <div id = "loser" class="hide-at-start">
+          <div class ="javi">
+            <h1>You owe Javis all over town. YOU LOST</h1>
+            <img src="img/javi.jpg"><img src="img/javi.jpg"><img src="img/javi.jpg">
+          </div>
+        </div>
+        <div id = "jail" class = "hide-at-start">
+          <h1>You're a murderer, sir or madam. What did you think would happen? You're in jail forever, facing death row. Best. </h1>
+        </div>
+      </div>
+      <div id = "win" style = "background-color: #a6e5a5;" class = "hide-at-start">
+        <h3>You won. No one cares, and your life is meaningless.</h3>
+      </div>
+    </div><!--end Container-->
 
   </body>
 </html>

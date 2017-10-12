@@ -9,6 +9,11 @@ $(document).ready(function() {
 
     $('#status').slideDown();
     $('#balance').text(band.addPoints(band.points));
+    if (band.addPoints(band.points) > 500) {
+      $('#welcome').hide()
+      $('#win').show()
+    }
+
     $('#instruments').text(band.instruments);
     $('#chords').text(band.chords)
     $('#welcome').slideUp();
@@ -34,6 +39,11 @@ $(document).ready(function() {
     if (instrument !== "6") {
       band.addInstrument(instrument)
       $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#pete').hide()
+        $('#win').show()
+      }
+
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
       $('#practiceBar').show();
@@ -54,6 +64,11 @@ $(document).ready(function() {
     if (instrument !== "6") {
       band.addInstrument(instrument)
       $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#archiabald').hide()
+        $('#win').show()
+      }
+
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
 
@@ -90,6 +105,11 @@ $(document).ready(function() {
       alert("You just added two chords to your library. Welcome to stardom! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
       $('#gig').slideDown()
       $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#practice').hide()
+        $('#win').show()
+      }
+
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else {
@@ -97,6 +117,11 @@ $(document).ready(function() {
       alert("You just added a chord to your library. Way to play! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
       $('#gig').slideDown()
       $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#practice').hide()
+        $('#win').show()
+      }
+
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     }
@@ -110,6 +135,15 @@ $(document).ready(function() {
       band.transaction(-5)
       $('#bar').hide()
       $('#home').slideUp()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#bar').hide()
+        $('#win').show()
+      }
+
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
+
     } else if (drink === "fireball"){
       $('#bar').hide()
       alert("Uh oh, you always start playing Stairway To Heavent when you drink fireball!")
@@ -127,23 +161,25 @@ $(document).ready(function() {
     $('#rentForm').slideDown()
     let rent = $("input:radio[name=rent]:checked").val();
     if (rent === "pay") {
-      // wallet = band.addPoints(band.points)
-      // newWallet = wallet - wallet + 1
       band.transaction( (band.addPoints(band.points)* -1) + 1 )
-
       $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#home').hide()
+        $('#win').show()
+      }
+
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
-      $('#rentForm').hide()
-      $('#gig').show()
-    } else {
-      $('#rentForm').hide()
+      $('#home').hide()
       $('#job').show()
+    } else {
+      $('#home').hide()
+      $('#bar').show()
     }
   })
+
   $('#gigForm').submit(function(event) {
     event.preventDefault();
-    debugger;
     let gig = $("input:radio[name=gig]:checked").val();
     if (gig === "tomSawyer") {
       alert("This kid's birthday party paid 50 Javis but you were way off base with the Rush thing. They charge you 5 Javis for making them listen to Canadian music.")
@@ -151,23 +187,89 @@ $(document).ready(function() {
       band.transaction(50)
       $('#gig').hide()
       $('#home').show()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#gig').hide()
+        $('#win').show()
+      }
 
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
     } else if (gig === "bakerStreet"){
       alert("Wah wah wah wah wah waaaaaaaaaah, wa wah wah wa wa waaaaaaaaaaaa... you are unmatched on the horn! Ten dollar tip! (And that's on top of the 50 you were paid for this gig, nice work)")
       band.transaction(10)
       band.transaction(50)
       $('#gig').hide()
       $('#home').show()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#gig').hide()
+        $('#win').show()
+      }
+
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
     } else if (gig === "moonageDaydream"){
       alert("Who doesn't love David Bowie? Jerks, that's who. Luckily there are no jerks here. Get 50 Javis for the gig and a 20 Javi tip.")
       band.transaction(20)
       band.transaction(50)
       $('#gig').hide()
       $('#home').show()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#gig').hide()
+        $('#win').show()
+      }
+
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
     } else {
       $('#gig').hide()
       $('#noStairway').show()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#gig').hide()
+        $('#win').show()
+      }
+
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
     }
   })
 
+  $('#jobForm').submit(function(event) {
+    event.preventDefault()
+    let reaction = $("input:radio[name=job]:checked").val();
+    if (reaction === "throwDrink") {
+      band.transaction(band.addPoints(band.points) * -1)
+      alert("You got fired, and your landlord sued you for the rest of the rent. You're out of money, and had to sell your instruments for weed. Best of luck!")
+      $('#job').hide()
+      $('#loser').show()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#job').hide()
+        $('#win').show()
+      }
+
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
+
+    } else if (reaction === "smilePolitely") {
+      band.transaction(40)
+      alert('Nice. She tipped you. And you peed in her coffee. Great night. Time to hit the music store again.')
+      $('#job').hide()
+      $('#beginning').show()
+      $('#balance').text(band.addPoints(band.points));
+      if (band.addPoints(band.points) > 500) {
+        $('#job').hide()
+        $('#win').show()
+      }
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
+    } else {
+      $('#job').hide()
+      $('#jail').show()
+    }
+
+  })
 });
