@@ -9,11 +9,6 @@ $(document).ready(function() {
 
     $('#status').slideDown();
     $('#balance').text(band.addPoints(band.points));
-    if (band.addPoints(band.points) > 500) {
-      $('#welcome').hide()
-      $('#win').show()
-    }
-
     $('#instruments').text(band.instruments);
     $('#chords').text(band.chords)
     $('#welcome').slideUp();
@@ -39,11 +34,6 @@ $(document).ready(function() {
     if (instrument !== "6") {
       band.addInstrument(instrument)
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#pete').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
       $('#practiceBar').show();
@@ -64,11 +54,6 @@ $(document).ready(function() {
     if (instrument !== "6") {
       band.addInstrument(instrument)
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#archiabald').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
 
@@ -105,11 +90,6 @@ $(document).ready(function() {
       alert("You just added two chords to your library. Welcome to stardom! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
       $('#gig').slideDown()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#practice').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else {
@@ -117,11 +97,6 @@ $(document).ready(function() {
       alert("You just added a chord to your library. Way to play! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
       $('#gig').slideDown()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#practice').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     }
@@ -134,13 +109,8 @@ $(document).ready(function() {
     if (drink === "whiteRussian") {
       band.transaction(-5)
       $('#bar').hide()
-      $('#home').slideUp()
+      $('#home').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#bar').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
 
@@ -163,11 +133,6 @@ $(document).ready(function() {
     if (rent === "pay") {
       band.transaction( (band.addPoints(band.points)* -1) + 1 )
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#home').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
       $('#home').hide()
@@ -188,11 +153,6 @@ $(document).ready(function() {
       $('#gig').hide()
       $('#home').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#gig').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else if (gig === "bakerStreet"){
@@ -202,11 +162,6 @@ $(document).ready(function() {
       $('#gig').hide()
       $('#home').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#gig').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else if (gig === "moonageDaydream"){
@@ -216,22 +171,12 @@ $(document).ready(function() {
       $('#gig').hide()
       $('#home').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#gig').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else {
       $('#gig').hide()
       $('#noStairway').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#gig').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     }
@@ -246,11 +191,6 @@ $(document).ready(function() {
       $('#job').hide()
       $('#loser').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#job').hide()
-        $('#win').show()
-      }
-
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
 
@@ -260,10 +200,6 @@ $(document).ready(function() {
       $('#job').hide()
       $('#beginning').show()
       $('#balance').text(band.addPoints(band.points));
-      if (band.addPoints(band.points) > 500) {
-        $('#job').hide()
-        $('#win').show()
-      }
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else {
