@@ -7,9 +7,10 @@
     <script type="text/javascript" src ="build/js/app.js"></script>    <title>Bandattle</title>
   </head>
   <body>
-    <div id = "status">
+    <div id = "status" class = "hide-at-start">
       <p>You have <span id = "balance"></span>Javis to spend. Don't run out!</p>
       <p>Your instruments: <span id = "instruments"></span></p>
+      <p>Your Chords: <span id = "chords"></span></p>
     </div>
     <div id = "welcome">
       <form id="bandNameInput">
@@ -67,7 +68,7 @@
 
     <div id ="archibald" class="hide-at-start">
       <h3>Welcome to Arcibald's, we have clarinets and class!</h3>
-      <form id="getInstrumentsForm">
+      <form id="archibaldInstruments">
         <label>
           <input type="radio" name="instrument" value="3">
           Brand new clarinet! wow! J200
@@ -88,13 +89,51 @@
       </form>
     </div>
 
+    <div id = "practiceBar" class = "hide-at-start">
+      <h3>Congratulations on your purchase!</h3>
+      <h3>It's been a long day. What's next?</h3>
+      <form id = "practiceOrBar">
+        <label>
+          <input type="radio" name="practiceChoice" value="practice">
+          Practice until your eyes bleed
+        </label>
+        <label>
+        <input type="radio" name="practiceChoice" value="bar">
+          Go to the bar
+        </label>
+        <button type = "submit">WOOAAAHOOO!</button>
+      </form>
+    </div>
+
+    <div id = "practice" class = "hide-at-start">
+      <h1>Time to earn some chords, brah! </h1>
+      <h3>What do you want to practice?</h3>
+      <form id = "practiceForm">
+        <label>
+          <input type="radio" name="practiceTime" value="stairway">
+          Stairway to Heaven
+        </label>
+        <label>
+          <input type="radio" name="practiceTime" value="circleOfFifths">
+          Major scales across the circle of 4ths/5ths
+        </label>
+        <label>
+          <input type="radio" name="practiceTime" value="octopus">
+          Octopus's Garden
+        </label>
+        <button type = "submit">Practice, ya silly!</button>
+      </form>
+    </div>
+
+<!-- LOST GAME DIV: -->
+    <div id = "noStairway" class="hide-at-start">
+      <h1>NO STAIRWAY!!!!!!!!</h1>
+    </div>
+
     <div id = "loser" class="hide-at-start">
       <h1>YOU LOST</h1>
     </div>
 
-    <div id = "practice" class = "hide-at-start">
-      <h1>PRACTICE</h1>
-    </div>
 
   </body>
 </html>
