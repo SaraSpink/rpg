@@ -36,11 +36,15 @@ $(document).ready(function() {
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
-    } else if  (band.addPoints(band.points) < 1){
+      $('#practiceBar').show();
+    }
+
+    if (band.addPoints(band.points) < 1){
       $('#loser').show();
     } else {
       $('#practiceBar').show();
-    };
+    }
+
   });
 
   $('#archibaldInstruments').submit(function(event) {
@@ -52,11 +56,14 @@ $(document).ready(function() {
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
-    } else if  (band.addPoints(band.points) < 1){
+      $('#practiceBar').show();
+    }
+
+    if (band.addPoints(band.points) < 1){
       $('#loser').show();
     } else {
       $('#practiceBar').show();
-    };
+    }
   });
 
   $('#practiceBar').submit(function(event) {
@@ -77,7 +84,7 @@ $(document).ready(function() {
     let practiceTime = $("input:radio[name=practiceTime]:checked").val();
     if (practiceTime === "stairway") {
       $('#noStairway').slideDown()
-    } else if (practiceTime = "circleOfFifths") {
+    } else if (practiceTime === "circleOfFifths") {
       band.addChord(0)
       band.addChord(1)
       alert("You just added two chords to your library. Welcome to stardom! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
@@ -87,13 +94,49 @@ $(document).ready(function() {
       $('#chords').text(band.chords)
     } else {
       band.addChord(2)
-      alert("You just a chord to your library. Way to play! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
+      alert("You just added a chord to your library. Way to play! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
       $('#home').slideDown()
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     }
-
   })
 
+  $('#barForm').submit(function(event) {
+    event.preventDefault();
+    $('#bar').slideDown()
+    let drink = $("input:radio[name=drink]:checked").val();
+    if (drink === "whiteRussian") {
+      band.buyItem(-5)
+      $('#bar').hide()
+      $('#home').slideUp()
+    } else if (drink === "fireball"){
+      $('#bar').hide()
+      alert("Uh oh, you always start playing Stairway To Heavent when you drink fireball!")
+      $('#noStairway').show()
+    } else {
+      alert("Your new friend knows about a gig!")
+
+      $('#bar').hide()
+      $('#home').show()
+    }
+  })
+
+  $('#rentForm').submit(function(event) {
+    event.preventDefault();
+    $('#rentForm').slideDown()
+    let rent = $("input:radio[name=rent]:checked").val();
+    if (rent === "pay") {
+      // wallet = band.addPoints(band.points)
+      // newWallet = wallet - wallet + 1
+      band.buyItem( (band.addPoints(band.points)* -1) + 1 )
+
+      $('#balance').text(band.addPoints(band.points));
+      $('#instruments').text(band.instruments);
+      $('#chords').text(band.chords)
+      $('#gig').show()
+    } else {
+      $('#job').show()
+    }
+  })
 });

@@ -32,4 +32,8 @@ export class Band {
     this.extras.push(availableItems.extrasInventory[index]);
     this.points.push(availableItems.extrasPoints[index]);
   }
+
+  buyItem(points){
+    this.points.push(points);
+  }
 }
