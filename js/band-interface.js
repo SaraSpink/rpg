@@ -88,14 +88,14 @@ $(document).ready(function() {
       band.addChord(0)
       band.addChord(1)
       alert("You just added two chords to your library. Welcome to stardom! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
-      $('#home').slideDown()
+      $('#gig').slideDown()
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
     } else {
       band.addChord(2)
       alert("You just added a chord to your library. Way to play! Your gigs will be worth more money now. Fuckin' epic, dude or dudette!")
-      $('#home').slideDown()
+      $('#gig').slideDown()
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
       $('#chords').text(band.chords)
@@ -107,7 +107,7 @@ $(document).ready(function() {
     $('#bar').slideDown()
     let drink = $("input:radio[name=drink]:checked").val();
     if (drink === "whiteRussian") {
-      band.buyItem(-5)
+      band.transaction(-5)
       $('#bar').hide()
       $('#home').slideUp()
     } else if (drink === "fireball"){
@@ -118,7 +118,7 @@ $(document).ready(function() {
       alert("Your new friend knows about a gig!")
 
       $('#bar').hide()
-      $('#home').show()
+      $('#gig').show()
     }
   })
 
@@ -129,7 +129,7 @@ $(document).ready(function() {
     if (rent === "pay") {
       // wallet = band.addPoints(band.points)
       // newWallet = wallet - wallet + 1
-      band.buyItem( (band.addPoints(band.points)* -1) + 1 )
+      band.transaction( (band.addPoints(band.points)* -1) + 1 )
 
       $('#balance').text(band.addPoints(band.points));
       $('#instruments').text(band.instruments);
@@ -141,4 +141,33 @@ $(document).ready(function() {
       $('#job').show()
     }
   })
+  $('#gigForm').submit(function(event) {
+    event.preventDefault();
+    debugger;
+    let gig = $("input:radio[name=gig]:checked").val();
+    if (gig === "tomSawyer") {
+      alert("This kid's birthday party paid 50 Javis but you were way off base with the Rush thing. They charge you 5 Javis for making them listen to Canadian music.")
+      band.transaction(-5)
+      band.transaction(50)
+      $('#gig').hide()
+      $('#home').show()
+
+    } else if (gig === "bakerStreet"){
+      alert("Wah wah wah wah wah waaaaaaaaaah, wa wah wah wa wa waaaaaaaaaaaa... you are unmatched on the horn! Ten dollar tip! (And that's on top of the 50 you were paid for this gig, nice work)")
+      band.transaction(10)
+      band.transaction(50)
+      $('#gig').hide()
+      $('#home').show()
+    } else if (gig === "moonageDaydream"){
+      alert("Who doesn't love David Bowie? Jerks, that's who. Luckily there are no jerks here. Get 50 Javis for the gig and a 20 Javi tip.")
+      band.transaction(20)
+      band.transaction(50)
+      $('#gig').hide()
+      $('#home').show()
+    } else {
+      $('#gig').hide()
+      $('#noStairway').show()
+    }
+  })
+
 });

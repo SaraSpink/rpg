@@ -4,5 +4,39 @@
 
 .flavorsOfFailure {
   align-items: center;
+  text-align: center;
+  color: white;
   background-color: #bf433f;
 }
+
+.statusBar {
+  color: white;
+  background-color: cadetblue;
+  padding: 20px;
+
+  text-align: center;
+}
+
+.container {
+  margin-top: 25px;
+}
+
+
+.javi img{
+  width: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn {
+  background-color: cadetblue;
+}
+
+.btn:hover {
+  background-color: gray;
+}
+
+/*.form-control {
+  display: block;
+  float: left;
+}*/
